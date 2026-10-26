@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1e3a5f">
+<title>Bible Quiz &amp; Daily Devotion</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<style>
+:root{--bg:#f6f3ec;--card:#fff;--ink:#1d2433;--sub:#5b6577;--pri:#1e3a5f;--acc:#c8963e;--ok:#2e7d4f;--bad:#b3392f;--line:#e4dfd2}
+@media (prefers-color-scheme:dark){:root{--bg:#121a26;--card:#1b2635;--ink:#eef1f6;--sub:#9aa7bb;--pri:#8fb4e8;--acc:#e0b160;--ok:#5cc08a;--bad:#ef7b70;--line:#2c3a4e}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Telugu","Nirmala UI",system-ui,sans-serif;line-height:1.7;padding-bottom:80px}
+header{background:var(--pri);color:#fff;padding:16px 16px 14px;padding-top:max(16px,env(safe-area-inset-top))}
+@media (prefers-color-scheme:dark){header{background:#1b2635;color:#eef1f6}}
+header h1{margin:0;font-size:1.15rem;font-weight:700}
+header small{opacity:.8}
+main{max-width:640px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
+.label{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);font-weight:700;font-family:system-ui,sans-serif}
+h2{margin:.2rem 0 .6rem;font-size:1.3rem;color:var(--pri)}
+.verse{border-left:4px solid var(--acc);padding:.2rem 0 .2rem 12px;margin:.8rem 0;font-size:1.05rem}
+.ref{color:var(--sub);font-size:.9rem}
+.prayer{background:rgba(200,150,62,.12);border-radius:12px;padding:12px;margin-top:12px}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--pri);color:#fff;border:0;border-radius:12px;padding:12px 18px;font-weight:600;font-family:system-ui,sans-serif}
+@media (prefers-color-scheme:dark){.btn{color:#10202f}}
+.btn.alt{background:transparent;color:var(--pri);border:1.5px solid var(--pri)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;margin:8px 0}
+.opt.ok{border-color:var(--ok);background:rgba(46,125,79,.14)}
+.opt.bad{border-color:var(--bad);background:rgba(179,57,47,.12)}
+.opt:disabled{cursor:default}
+.bar{height:8px;background:var(--line);border-radius:8px;overflow:hidden;margin-bottom:12px}
+.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .25s}
+.explain{margin-top:10px;padding:12px;border-radius:12px;background:rgba(30,58,95,.08)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 4px}
+.stat b{display:block;font-size:1.5rem;color:var(--pri);font-family:system-ui,sans-serif}
+.stat span{font-size:.75rem;color:var(--sub);font-family:system-ui,sans-serif}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;background:none;border:0;padding:10px 4px 9px;color:var(--sub);font-size:.78rem;font-family:system-ui,sans-serif}
+nav button .ic{display:block;font-size:1.35rem;line-height:1.2}
+nav button.on{color:var(--pri);font-weight:700}
+.fav{background:none;border:0;font-size:1.6rem;color:var(--acc)}
+.hidden{display:none}
+.big{font-size:2.6rem;text-align:center;margin:.2rem 0;font-family:system-ui,sans-serif;color:var(--pri);font-weight:800}
+.item{border-top:1px solid var(--line);padding:12px 0;cursor:pointer}
+.item:first-child{border-top:0}
+</style>
+</head>
+<body>
+<header><h1>✝ Bible Quiz &amp; Daily Devotion</h1><small>తెలుగు బైబిల్ క్విజ్ • దినదిన ధ్యానము</small></header>
+<main id="app"></main>
+<nav>
+  <button data-tab="today" class="on"><span class="ic">📖</span>Today</button>
+  <button data-tab="quiz"><span class="ic">❓</span>Quiz</button>
+  <button data-tab="saved"><span class="ic">★</span>Saved</button>
+  <button data-tab="me"><span class="ic">🏆</span>Progress</button>
+</nav>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
